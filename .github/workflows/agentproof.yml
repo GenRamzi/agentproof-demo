@@ -17,8 +17,8 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           fetch-depth: 0
-      - name: Verify with AgentProof v0.2.0rc1
-        uses: GenRamzi/AgentProof@v0.2.0rc1
+      - name: Verify with AgentProof v0.2.0rc2
+        uses: GenRamzi/AgentProof@v0.2.0rc2
         with:
           test-command: python -m pytest -q
           policy-preset: strict

@@ -4,10 +4,10 @@ This repository is a small Python project used to exercise AgentProof against a 
 
 ## Verification workflow
 
-The workflow runs the published v0.2.0rc1 Action from the AgentProof repository:
+The workflow runs the published v0.2.0rc2 Action from the AgentProof repository. The original AP001/AP002 receipts were also exercised against immutable v0.2.0rc1 before the metadata correction:
 
 ```yaml
-uses: GenRamzi/AgentProof@v0.2.0rc1
+uses: GenRamzi/AgentProof@v0.2.0rc2
 with:
   test-command: python -m pytest -q
   policy-preset: strict

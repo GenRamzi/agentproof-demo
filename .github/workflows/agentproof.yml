@@ -1,0 +1,26 @@
+name: AgentProof Demo
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: read
+  security-events: write
+
+jobs:
+  verify:
+    name: AgentProof / Verification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+      - name: Verify with AgentProof development channel
+        uses: GenRamzi/AgentProof@main
+        with:
+          test-command: python -m pytest -q
+          policy-preset: strict
+          auto-proof: true
+          upload-sarif: true

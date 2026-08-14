@@ -4,17 +4,17 @@ This repository is a small Python project used to exercise AgentProof against a 
 
 ## Verification workflow
 
-The workflow runs the development-channel Action from the AgentProof repository until the first release candidate exists:
+The workflow runs the published v0.2.0rc1 Action from the AgentProof repository:
 
 ```yaml
-uses: GenRamzi/AgentProof@main
+uses: GenRamzi/AgentProof@v0.2.0rc1
 with:
   test-command: python -m pytest -q
   policy-preset: strict
   auto-proof: true
 ```
 
-After `v0.2.0rc1` is published, the reference should be changed to `GenRamzi/AgentProof@v0.2.0rc1`. After stable release it should be pinned to `GenRamzi/AgentProof@v0.2.0`.
+After stable release, the reference should be updated to `GenRamzi/AgentProof@v0.2.0` or a full commit SHA.
 
 ## Planned PR scenarios
 

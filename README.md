@@ -4,7 +4,7 @@ This repository is a small Python project used to exercise AgentProof against a 
 
 ## Verification workflow
 
-The workflow runs the published v0.2.0rc2 Action from the AgentProof repository. The original AP001/AP002 receipts were also exercised against immutable v0.2.0rc1 before the metadata correction:
+The workflow runs the historical published `v0.2.0rc2` Action from the AgentProof repository. The original AP001/AP002 receipts were also exercised against immutable `v0.2.0rc1` before the metadata correction. The current AgentProof `main` line is unpublished `0.2.0rc3.dev0`, so the demo will move to a new immutable RC only after the package identity blocker is resolved.
 
 ```yaml
 uses: GenRamzi/AgentProof@v0.2.0rc2
@@ -14,7 +14,7 @@ with:
   auto-proof: true
 ```
 
-After stable release, the reference should be updated to `GenRamzi/AgentProof@v0.2.0` or a full commit SHA.
+The verification job uses `pull_request`, `contents: read`, `pull-requests: read`, `persist-credentials: false`, and no `security-events: write` permission. SARIF is uploaded by a separate job that downloads only the AgentProof artifact. After a renamed stable release, the reference should be updated to its immutable tag or full commit SHA.
 
 ## Planned PR scenarios
 

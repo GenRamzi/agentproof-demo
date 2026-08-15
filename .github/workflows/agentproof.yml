@@ -17,6 +17,11 @@ jobs:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
         with:
           fetch-depth: 0
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+      - name: Install demo test dependencies
+        run: python -m pip install -e ".[test]"
       - name: Verify with AgentProof v0.2.0rc2
         uses: GenRamzi/AgentProof@v0.2.0rc2
         with:
